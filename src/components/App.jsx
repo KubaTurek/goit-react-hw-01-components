@@ -1,32 +1,22 @@
-import Profile from './Profile';
-import Statistics from './Statistics';
-import FriendsList from './Friendslist';
-import FriendsItem from './FriendsItem';
-import TransactionHistory from './TransactionHistory';
-import user from './user.json';
-import data from './data.json';
-import friends from './friends.json';
-import transactions from './transactions.json'
+import Profile from './Profile/Profile';
+import Statistics from './Statistics/Statistics';
+import FriendsList from './Friendlist/Friendslist';
+import FriendsListItem from './Friendlist/FriendsListItem';
+import TransactionHistory from './TransactionHistory/TransactionHistory';
+import user from './data/user.json';
+import data from './data/data.json'
+import friends from './data/friends.json';
+import transactions from './data/transactions.json';
+import '../index.css';
+
 
 export const App = () => {
   return (
-    <div
-      style={{
-      
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101',
-        backgroundColor: 'rgb(218, 218, 242)',
-        paddingTop: '30px',
-      }}
-    >
+    <div className={"app"}>
       <Profile {...user} />
       <Statistics title="Upload data" stats={data} />
       <FriendsList>
-        <FriendsItem {...friends} />
+        <FriendsListItem {...friends} />
       </FriendsList>
       <TransactionHistory items={transactions} />
     </div>
