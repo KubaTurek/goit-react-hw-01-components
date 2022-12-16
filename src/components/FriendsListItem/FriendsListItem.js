@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import css from './FriendsListItem.module.css';
-import friends from '../data/friends.json'
+import friends from '../data/friends.json';
 
-const FriendsListItem = ({ avatar, name, isOnline }) => {
+const FriendsListItem = ({ avatar, name, isOnline, id }) => {
   return friends.map(friend => {
     return (
       <li key={friend.id} className={css.item}>
@@ -27,6 +27,7 @@ FriendsListItem.propTypes = {
   avatar: PropTypes.string,
   name: PropTypes.string,
   isOnline: PropTypes.bool,
+  id: PropTypes.number
 };
 
 export default FriendsListItem;
