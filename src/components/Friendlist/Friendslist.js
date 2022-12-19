@@ -2,10 +2,12 @@ import PropTypes from 'prop-types';
 import css from './FriendsList.module.css';
 import FriendsListItem from '../FriendsListItem/FriendsListItem';
 
-const FriendsList = ({ friends}) => {
-  return <ul className={css.list}>
-    <FriendsListItem />
-  </ul>;
+const FriendsList = ({ friends }) => {
+  return (
+    <ul className={css.list}>
+      <FriendsListItem friends={friends} />
+    </ul>
+  );
 };
 
 FriendsList.propTypes = {
